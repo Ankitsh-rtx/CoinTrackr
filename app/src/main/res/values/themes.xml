@@ -1,0 +1,29 @@
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Base application theme. -->
+    <style name="myCoinTrackrTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/background_theme_color</item>
+        <item name="colorPrimaryVariant">@color/background_theme_color_variant</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
+        <!-- Customize your theme here. -->
+        <item name="fontFamily">@font/nunito_medium</item>
+
+    </style>
+
+    <style name="TabLayoutTextStyle" parent="myCoinTrackrTheme">
+        <item name="android:textSize">16sp</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="fontFamily">@font/nunito_bold</item>
+
+    </style>
+
+
+
+</resources>
