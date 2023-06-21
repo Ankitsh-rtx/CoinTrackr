@@ -4,15 +4,19 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
 import com.example.cointrackr.R
 import com.example.cointrackr.databinding.CurrencyItemLayoutBinding
 import com.example.cointrackr.models.CryptoCurrency
+import com.example.cointrackr.ui.HomeFragmentDirections
+import com.example.cointrackr.ui.MarketFragmentDirections
+import com.example.cointrackr.ui.WatchListFragment
+import com.example.cointrackr.ui.WatchListFragmentDirections
 import kotlin.math.roundToInt
 
-class MarketAdapter(var context: Context, var list: List<CryptoCurrency>): RecyclerView.Adapter<MarketAdapter.MarketViewHolder>() {
+class MarketAdapter(var context: Context, var list: List<CryptoCurrency>, var type: String): RecyclerView.Adapter<MarketAdapter.MarketViewHolder>() {
     inner class MarketViewHolder(view: View): RecyclerView.ViewHolder(view){
         var binding = CurrencyItemLayoutBinding.bind(view)
     }
@@ -51,5 +55,27 @@ class MarketAdapter(var context: Context, var list: List<CryptoCurrency>): Recyc
             holder.binding.currencyChangeTextView.setTextColor(context.resources.getColor((R.color.red)))
             holder.binding.currencyChangeTextView.text ="${(currency_inc*100.0).roundToInt() / 100.0} %"
         }
+        holder.itemView.setOnClickListener{
+            if(type=="home"){
+                findNavController(it).navigate(
+                    HomeFragmentDirections.actionHomeFragmentToDetailsFragment(item)
+                )
+            }else if(type=="market"){
+                findNavController(it).navigate(
+                    MarketFragmentDirections.actionMarketFragmentToDetailsFragment(item)
+                )
+            }else{
+                findNavController(it).navigate(
+                    WatchListFragmentDirections.actionWatchListFragmentToDetailsFragment(item)
+                )
+
+            }
+
+        }
+    }
+
+    fun updateList(dataItem : List<CryptoCurrency>){
+        list = dataItem
+        notifyDataSetChanged()
     }
 }

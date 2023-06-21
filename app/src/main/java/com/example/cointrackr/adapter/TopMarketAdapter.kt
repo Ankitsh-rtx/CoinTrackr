@@ -4,11 +4,14 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.cointrackr.R
 import com.example.cointrackr.databinding.TopCurrencyLayoutBinding
 import com.example.cointrackr.models.CryptoCurrency
+import com.example.cointrackr.ui.HomeFragmentDirections
+import com.example.cointrackr.ui.WatchListFragmentDirections
 import java.security.AccessControlContext
 import kotlin.math.roundToInt
 
@@ -95,7 +98,12 @@ class TopMarketAdapter(var context:Context, val list : List<CryptoCurrency>):
             holder.binding.topCurrencyChangeTextView.setTextColor(context.resources.getColor((R.color.red)))
             holder.binding.topCurrencyChangeTextView.text ="${(currency_inc*100.0).roundToInt() / 100.0} %"
         }
+        holder.itemView.setOnClickListener{
+            Navigation.findNavController(it).navigate(
+                HomeFragmentDirections.actionHomeFragmentToDetailsFragment(item)
+            )
 
+        }
 
     }
 }

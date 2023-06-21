@@ -10,3 +10,4 @@ interface ApiInterface {
     suspend fun getMarketData(): Response<MarketModel>
 
 }
+

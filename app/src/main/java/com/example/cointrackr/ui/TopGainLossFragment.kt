@@ -7,7 +7,6 @@ import android.view.View
 import android.view.View.GONE
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
-import com.example.cointrackr.R
 import com.example.cointrackr.adapter.MarketAdapter
 import com.example.cointrackr.api.ApiInterface
 import com.example.cointrackr.api.ApiUtilities
@@ -53,19 +52,27 @@ class TopGainLossFragment : Fragment() {
                     if(position == 0 ){
                         list.clear()
                         binding.spinKitView.visibility = GONE;
-                        for(i in 0..9){
+                        for(i in 0..14){
                             list.add(dataItem[i])
                         }
 
-                        binding.topGainLoseRecyclerView.adapter = MarketAdapter(requireContext(), list)
+                        binding.topGainLoseRecyclerView.adapter = MarketAdapter(
+                            requireContext(),
+                            list,
+                            "home"
+                        )
                     }else{
                         list.clear()
                         binding.spinKitView.visibility = GONE;
-                        for(i in 0..9){
+                        for(i in 0..14){
                             list.add(dataItem[dataItem.size-1-i])
                         }
 
-                        binding.topGainLoseRecyclerView.adapter = MarketAdapter(requireContext(), list)
+                        binding.topGainLoseRecyclerView.adapter = MarketAdapter(
+                            requireContext(),
+                            list,
+                            "home"
+                        )
                     }
                 }
             }
