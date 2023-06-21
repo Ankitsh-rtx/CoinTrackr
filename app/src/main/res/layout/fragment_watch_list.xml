@@ -8,15 +8,30 @@
     android:layout_height="match_parent"
     android:background="@color/background_theme_color">
 
+    <TextView
+        android:id="@+id/watchTitle"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_margin="8dp"
+
+        android:fontFamily="@font/nunito_bold"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Watch"
+        android:textColor="@color/white"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout5"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/watchTitle">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/watchlistRecyclerView"
