@@ -1,16 +1,18 @@
 package com.example.cointrackr.ui
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
-import com.bumptech.glide.manager.LifecycleListener
+import com.example.cointrackr.LoginActivity
 import com.example.cointrackr.R
 import com.example.cointrackr.adapter.TopGainLossPageAdapter
 import com.example.cointrackr.adapter.TopMarketAdapter
@@ -18,6 +20,7 @@ import com.example.cointrackr.api.ApiInterface
 import com.example.cointrackr.api.ApiUtilities
 import com.example.cointrackr.databinding.FragmentHomeBinding
 import com.google.android.material.tabs.TabLayoutMediator
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -26,16 +29,24 @@ import kotlinx.coroutines.withContext
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
+    private lateinit var firebaseAuth: FirebaseAuth
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(layoutInflater)
+
+        firebaseAuth = FirebaseAuth.getInstance()
+        binding.logoutBtn.setOnClickListener {
+            logout(firebaseAuth)
+        }
         getTopCurrencyList()
         setTabLayout()
         return binding.root
     }
+
 
     private fun setTabLayout(){
         val adapter = TopGainLossPageAdapter(this)
@@ -75,6 +86,15 @@ class HomeFragment : Fragment() {
             }
 //            Log.d("CRYPTO", "getTopCurrencyList: ${res.body()!!.data.cryptoCurrencyList}")
         }
+    }
+
+    private fun logout(firebaseAuth: FirebaseAuth) {
+        firebaseAuth.signOut()
+
+        startActivity(Intent(activity, LoginActivity::class.java)
+            .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK))
+        activity?.finish()
+
     }
 
 
