@@ -37,7 +37,7 @@ CoinTrackr is a Crypto Currency Tracking Android Application 📱 designed to pr
 
 You can download the latest APK file of the CoinTrackr app from the following link:
 
-👉 [CoinTrackr APK](https://example.com/cointrackr.apk) 👈
+👉 [CoinTrackr APK](https://github.com/Ankitsh-rtx/CoinTrackr/releases/download/v1.5.0/CoinTrackr.apk) 👈
 
 ## Contributing 👥
 
