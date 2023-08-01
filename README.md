@@ -4,6 +4,15 @@
 
 CoinTrackr is a Crypto Currency Tracking Android Application 📱 designed to provide users with a comprehensive and user-friendly platform to track and manage their cryptocurrency investments. This mobile application aims to cater to the increasing demand for efficient cryptocurrency portfolio management tools while delivering real-time data and insights to users.
 
+## Release 📦
+
+***Try the latest CoinTrackr APK from below 👇***
+
+<a href="https://github.com/Ankitsh-rtx/CoinTrackr/releases/download/v1.5.0/CoinTrackr.apk">
+  <img src="https://img.shields.io/badge/CoinTrackr-APK-8A2BE2" width="120" height="24">
+</a>
+
+
 ## Key Features 🗝️:
 
 - **Real-Time Data Tracking 📊:** The application will fetch real-time data from various cryptocurrency exchanges and display accurate information about the latest prices, market trends, trading volumes, and more. Users can monitor their favorite cryptocurrencies and stay updated with the dynamic crypto market.
@@ -32,12 +41,6 @@ CoinTrackr is a Crypto Currency Tracking Android Application 📱 designed to pr
 - Gson 🍬 - JSON serialization/deserialization library.
 - Coroutines 🌀 - asynchronous code in a sequential and more readable manner in Kotlin.
 - Material Design 🎨 - UI components and guidelines.
-
-## Release 📦
-
-You can download the latest APK file of the CoinTrackr app from the following link:
-
-👉 [CoinTrackr APK](https://github.com/Ankitsh-rtx/CoinTrackr/releases/download/v1.5.0/CoinTrackr.apk) 👈
 
 ## Contributing 👥
 
