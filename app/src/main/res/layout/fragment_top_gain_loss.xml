@@ -7,17 +7,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/topGainLoseRecyclerView"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:layout_width="0dp"
-        android:orientation="vertical"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:listitem="@layout/currency_item_layout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            android:id="@+id/topGainLoseRecyclerView"
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:listitem="@layout/currency_item_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
 
     <com.github.ybq.android.spinkit.SpinKitView
         style="@style/SpinKitView.ThreeBounce"

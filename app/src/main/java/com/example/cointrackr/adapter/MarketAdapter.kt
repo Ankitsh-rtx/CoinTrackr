@@ -12,7 +12,6 @@ import com.example.cointrackr.databinding.CurrencyItemLayoutBinding
 import com.example.cointrackr.models.CryptoCurrency
 import com.example.cointrackr.ui.HomeFragmentDirections
 import com.example.cointrackr.ui.MarketFragmentDirections
-import com.example.cointrackr.ui.WatchListFragment
 import com.example.cointrackr.ui.WatchListFragmentDirections
 import kotlin.math.roundToInt
 

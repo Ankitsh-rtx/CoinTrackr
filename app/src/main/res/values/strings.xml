@@ -12,4 +12,7 @@
     <string name="_4h">4 Hour</string>
     <string name="_15m">15 Min</string>
     <string name="image">crypto currency image</string>
+    <string name="app_tagline">Your Crypto Companion</string>
+    <string name="app_description1">Track. Analyze.</string>
+    <string name="app_description2">Stay Informed.</string>
 </resources>

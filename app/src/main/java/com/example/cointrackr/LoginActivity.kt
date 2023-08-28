@@ -1,7 +1,6 @@
 package com.example.cointrackr
 
 import android.content.Intent
-import android.opengl.Visibility
 import android.os.Bundle
 import android.text.method.PasswordTransformationMethod
 import android.view.View

@@ -39,20 +39,20 @@ class TopGainLossFragment : Fragment() {
             val res = ApiUtilities.getInstance().create(ApiInterface::class.java)
                 .getMarketData()
             if(res.body()!=null){
-                withContext(Dispatchers.Main){
+                withContext(Dispatchers.Main) {
                     val dataItem = res.body()!!.data.cryptoCurrencyList
 
-                    Collections.sort(dataItem){
-                        o1,o2->(o2.quotes[0].percentChange24h.toInt())
-                        .compareTo((o1.quotes[0].percentChange24h.toInt()))
+                    Collections.sort(dataItem) { o1, o2 ->
+                        (o2.quotes[0].percentChange24h.toInt())
+                            .compareTo((o1.quotes[0].percentChange24h.toInt()))
                     }
 
                     val list = ArrayList<CryptoCurrency>()
 
-                    if(position == 0 ){
+                    if (position == 0) {
                         list.clear()
                         binding.spinKitView.visibility = GONE;
-                        for(i in 0..14){
+                        for (i in 0..14) {
                             list.add(dataItem[i])
                         }
 
@@ -61,11 +61,11 @@ class TopGainLossFragment : Fragment() {
                             list,
                             "home"
                         )
-                    }else{
+                    } else {
                         list.clear()
                         binding.spinKitView.visibility = GONE;
-                        for(i in 0..14){
-                            list.add(dataItem[dataItem.size-1-i])
+                        for (i in 0..14) {
+                            list.add(dataItem[dataItem.size - 1 - i])
                         }
 
                         binding.topGainLoseRecyclerView.adapter = MarketAdapter(

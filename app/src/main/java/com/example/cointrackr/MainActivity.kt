@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.PopupMenu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.cointrackr.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         val popupMenu = PopupMenu(this,null)
         popupMenu.inflate(R.menu.bottom_nav_menu)
-        binding.bottomBar.setupWithNavController(popupMenu.menu,navController)
+        binding.bottomBar.setupWithNavController(navController)
 
 
     }
