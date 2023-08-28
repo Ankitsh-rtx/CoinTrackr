@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "882444700209",
+    "project_id": "cointrackr-24a97",
+    "storage_bucket": "cointrackr-24a97.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:882444700209:android:76ee33cea0d2c78b92e310",
+        "android_client_info": {
+          "package_name": "com.example.cointrackr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "882444700209-g5hfn5ve824s79bppv6h98h0mideg68u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaTfH2HYm0mKcwlekhtlCnubORvqlvZ9E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "882444700209-g5hfn5ve824s79bppv6h98h0mideg68u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
