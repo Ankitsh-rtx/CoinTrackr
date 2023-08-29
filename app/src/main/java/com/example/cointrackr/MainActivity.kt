@@ -2,6 +2,7 @@ package com.example.cointrackr
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.PopupMenu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
@@ -29,6 +30,24 @@ class MainActivity : AppCompatActivity() {
         popupMenu.inflate(R.menu.bottom_nav_menu)
         binding.bottomBar.setupWithNavController(navController)
 
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.homeFragment -> showBottomNav()
+                R.id.marketFragment -> showBottomNav()
+                R.id.watchListFragment -> showBottomNav()
+                else -> hideBottomNav()
+            }
+        }
+
+
+    }
+    private fun showBottomNav() {
+        binding.bottomBar.visibility = View.VISIBLE
+
+    }
+
+    private fun hideBottomNav() {
+        binding.bottomBar.visibility = View.GONE
 
     }
 

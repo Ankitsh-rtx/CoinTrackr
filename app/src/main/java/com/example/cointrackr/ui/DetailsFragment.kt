@@ -8,6 +8,7 @@ import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.widget.AppCompatButton
 import androidx.fragment.app.Fragment
@@ -108,12 +109,30 @@ class DetailsFragment : Fragment() {
         val fifteenMin = binding.button15Min
         val clickListener = View.OnClickListener {
             when(it.id){
-                fifteenMin.id -> loadChartData(it, "15", data,oneDay,oneMonth,oneWeek,fourHr,oneHr)
-                oneHr.id -> loadChartData(it, "1H", data,oneDay,oneMonth,oneWeek,fourHr,fifteenMin)
-                fourHr.id -> loadChartData(it, "4H", data,oneDay,oneMonth,oneWeek,fifteenMin,oneHr)
-                oneDay.id -> loadChartData(it, "D", data,fifteenMin,oneMonth,oneWeek,fourHr,oneHr)
-                oneWeek.id -> loadChartData(it, "W", data,oneDay,oneMonth,fifteenMin,fourHr,oneHr)
-                oneMonth.id -> loadChartData(it, "M", data,oneDay,fifteenMin,oneWeek,fourHr,oneHr)
+                fifteenMin.id -> {
+                    fifteenMin.setTextColor(resources.getColor(R.color.white))
+                    loadChartData(it, "15", data, oneDay, oneMonth, oneWeek, fourHr, oneHr)
+                }
+                oneHr.id -> {
+                    oneHr.setTextColor(resources.getColor(R.color.white))
+                    loadChartData(it, "1H", data, oneDay, oneMonth, oneWeek, fourHr, fifteenMin)
+                }
+                fourHr.id -> {
+                    fourHr.setTextColor(resources.getColor(R.color.white))
+                    loadChartData(it, "4H", data, oneDay, oneMonth, oneWeek, fifteenMin, oneHr)
+                }
+                oneDay.id -> {
+                    oneDay.setTextColor(resources.getColor(R.color.white))
+                    loadChartData(it, "D", data, fifteenMin, oneMonth, oneWeek, fourHr, oneHr)
+                }
+                oneWeek.id -> {
+                    oneWeek.setTextColor(resources.getColor(R.color.white))
+                    loadChartData(it, "W", data, oneDay, oneMonth, fifteenMin, fourHr, oneHr)
+                }
+                oneMonth.id -> {
+                    oneMonth.setTextColor(resources.getColor(R.color.white))
+                    loadChartData(it, "M", data, oneDay, fifteenMin, oneWeek, fourHr, oneHr)
+                }
             }
         }
         fifteenMin.setOnClickListener(clickListener)
@@ -129,14 +148,15 @@ class DetailsFragment : Fragment() {
         it: View?,
         s: String,
         data: CryptoCurrency,
-        oneDay: AppCompatButton,
-        oneMonth: AppCompatButton,
-        oneWeek: AppCompatButton,
-        fourHr: AppCompatButton,
-        oneHr: AppCompatButton
+        oneDay: TextView,
+        oneMonth: TextView,
+        oneWeek: TextView,
+        fourHr: TextView,
+        oneHr: TextView
     ) {
         disableButton(oneDay, oneMonth, oneWeek, fourHr, oneHr)
         it?.setBackgroundResource(R.drawable.active_button)
+
         binding.detaillChartWebView.settings.javaScriptEnabled = true
         binding.detaillChartWebView.setLayerType(View.LAYER_TYPE_SOFTWARE,null)
 
@@ -148,12 +168,21 @@ class DetailsFragment : Fragment() {
         )
     }
 
-    private fun disableButton(oneDay: AppCompatButton, oneMonth: AppCompatButton, oneWeek: AppCompatButton, fourHr: AppCompatButton, oneHr: AppCompatButton) {
-        oneDay.background = null
-        oneMonth.background = null
-        oneWeek.background = null
-        fourHr.background = null
-        oneHr.background = null
+    private fun disableButton(oneDay: TextView, oneMonth: TextView, oneWeek: TextView, fourHr: TextView, oneHr: TextView) {
+        oneDay.setBackgroundResource(R.drawable.inactive_button)
+        oneDay.setTextColor(resources.getColor(R.color.black_900))
+
+        oneMonth.setBackgroundResource(R.drawable.inactive_button)
+        oneMonth.setTextColor(resources.getColor(R.color.black_900))
+
+        oneWeek.setBackgroundResource(R.drawable.inactive_button)
+        oneWeek.setTextColor(resources.getColor(R.color.black_900))
+
+        fourHr.setBackgroundResource(R.drawable.inactive_button)
+        fourHr.setTextColor(resources.getColor(R.color.black_900))
+
+        oneHr.setBackgroundResource(R.drawable.inactive_button)
+        oneHr.setTextColor(resources.getColor(R.color.black_900))
 
     }
 

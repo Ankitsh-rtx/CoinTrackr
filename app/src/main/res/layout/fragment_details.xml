@@ -36,6 +36,7 @@
             android:layout_height="48dp"
             android:padding="8dp"
             android:background="@null"
+            app:tint="@color/black_900"
             android:src="@drawable/ic_back_stack"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,8 +46,9 @@
             android:id="@+id/detailSymbolTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
+            android:textColor="@color/black_900"
             android:textSize="20sp"
+            android:fontFamily="@font/metropolis_bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/addWatchlistButton"
             app:layout_constraintStart_toEndOf="@+id/backStackButton"
@@ -73,6 +75,7 @@
             android:layout_marginTop="6dp"
             android:textColor="@color/green"
             android:textSize="18sp"
+            android:fontFamily="@font/metropolis_regular"
             app:layout_constraintStart_toEndOf="@+id/detailChangeImageView"
             app:layout_constraintTop_toBottomOf="@+id/detailPriceTextView"
             tools:text="2.68%" />
@@ -82,8 +85,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="26sp"
+            android:fontFamily="@font/metropolis_medium"
             app:layout_constraintStart_toEndOf="@+id/detailImageView"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="$108.56" />
@@ -118,40 +122,43 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/detailPrice">
 
-        <androidx.appcompat.widget.AppCompatButton
+        <TextView
             android:id="@+id/button_1_month"
             android:layout_width="58dp"
             android:layout_height="36dp"
             android:layout_marginTop="8dp"
-            android:background="@null"
+            android:background="@drawable/inactive_button"
             android:text="@string/_1m"
+            android:gravity="center"
             android:textAllCaps="false"
-            android:textColor="@color/white"
+            android:textColor="@color/black_900"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/button_1_week"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <TextView
             android:id="@+id/button_1_week"
             android:layout_width="58dp"
             android:layout_height="36dp"
-            android:background="@null"
+            android:background="@drawable/inactive_button"
             android:text="@string/_1w"
+            android:gravity="center"
             android:textAllCaps="false"
-            android:textColor="@color/white"
+            android:textColor="@color/black_900"
             app:layout_constraintBottom_toBottomOf="@+id/button_1_month"
             app:layout_constraintEnd_toStartOf="@+id/button_1_month"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/button_1_day"
             app:layout_constraintTop_toTopOf="@+id/button_1_month" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <TextView
             android:id="@+id/button_1_day"
             android:layout_width="58dp"
             android:layout_height="36dp"
             android:background="@drawable/active_button"
             android:text="@string/_1d"
+            android:gravity="center"
             android:textAllCaps="false"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/button_1_week"
@@ -160,42 +167,45 @@
             app:layout_constraintStart_toEndOf="@+id/button_4_hr"
             app:layout_constraintTop_toTopOf="@+id/button_1_week" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <TextView
             android:id="@+id/button_4_hr"
             android:layout_width="58dp"
             android:layout_height="36dp"
-            android:background="@null"
+            android:background="@drawable/inactive_button"
             android:text="@string/_4h"
+            android:gravity="center"
             android:textAllCaps="false"
-            android:textColor="@color/white"
+            android:textColor="@color/black_900"
             app:layout_constraintBottom_toBottomOf="@+id/button_1_day"
             app:layout_constraintEnd_toStartOf="@+id/button_1_day"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/button_1_hr"
             app:layout_constraintTop_toTopOf="@+id/button_1_day" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <TextView
             android:id="@+id/button_1_hr"
             android:layout_width="58dp"
             android:layout_height="36dp"
-            android:background="@null"
+            android:background="@drawable/inactive_button"
             android:text="@string/_1h"
+            android:gravity="center"
             android:textAllCaps="false"
-            android:textColor="@color/white"
+            android:textColor="@color/black_900"
             app:layout_constraintBottom_toBottomOf="@+id/button_4_hr"
             app:layout_constraintEnd_toStartOf="@+id/button_4_hr"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/button_15_min"
             app:layout_constraintTop_toTopOf="@+id/button_4_hr" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <TextView
             android:id="@+id/button_15_min"
             android:layout_width="58dp"
             android:layout_height="36dp"
-            android:background="@null"
+            android:background="@drawable/inactive_button"
             android:text="@string/_15m"
             android:textAllCaps="false"
-            android:textColor="@color/white"
+            android:gravity="center"
+            android:textColor="@color/black_900"
             app:layout_constraintBottom_toBottomOf="@+id/button_1_hr"
             app:layout_constraintEnd_toStartOf="@+id/button_1_hr"
             app:layout_constraintHorizontal_bias="0.5"
