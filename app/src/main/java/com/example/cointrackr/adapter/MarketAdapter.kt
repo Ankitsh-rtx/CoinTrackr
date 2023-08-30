@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -48,10 +49,12 @@ class MarketAdapter(var context: Context, var list: List<CryptoCurrency>, var ty
         val currency_inc = item.quotes!![0].percentChange24h
         if(currency_inc>0){
             holder.binding.currencyChangeTextView.setTextColor(context.resources.getColor(R.color.green))
+            holder.binding .currencyChartImageView.setColorFilter(ContextCompat.getColor(context, R.color.green))
             holder.binding.currencyChangeTextView.text ="+${(currency_inc*100.0).roundToInt() / 100.0} %"
 
         }else{
             holder.binding.currencyChangeTextView.setTextColor(context.resources.getColor((R.color.red)))
+            holder.binding .currencyChartImageView.setColorFilter(ContextCompat.getColor(context, R.color.red))
             holder.binding.currencyChangeTextView.text ="${(currency_inc*100.0).roundToInt() / 100.0} %"
         }
         holder.itemView.setOnClickListener{
